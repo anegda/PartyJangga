@@ -3,7 +3,7 @@ import java.util.*;
 public class ListaJugadores {
 	private ArrayList<Jugador> lista;
 	private static ListaJugadores miListaJugadores=null;
-	
+	//no tiene maximo de jugadores
 	private ListaJugadores() {
 		this.lista=new ArrayList<Jugador>();
 	}
