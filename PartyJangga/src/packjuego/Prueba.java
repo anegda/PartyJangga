@@ -13,5 +13,5 @@ public class Prueba {
 		System.out.println(this.descripcion);
 	}
 	//hola hugooo <3
-	//creo que ya esta xd
+	//creo que ya esta xd :_D
 }
