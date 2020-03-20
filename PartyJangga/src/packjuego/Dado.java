@@ -23,5 +23,5 @@ public class Dado {
 		System.out.println("El número que has sacado es un: " + valorDado);
 		return valorDado;
 	}
-	//aitana no te quiere.
+	//aitana no te quiere..
 }
