@@ -25,6 +25,10 @@ public class Jugador {
 		return(tirada);
 	}
 	
+	public void setPosicion(int pPosicion) {
+		this.posicion = pPosicion;
+	}
+	
 	public void responderPregunta() {
 		
 	}
