@@ -60,7 +60,7 @@ public class ListaJugadores {
 		Jugador unJugador;
 		boolean correcto = false;
 		boolean fin = false;
-		while (itr.hasNext()) {
+		while (itr.hasNext() && !fin) {
 			unJugador=itr.next();
 			Pregunta laPregunta = miListaPreguntas.realizarPregunta();
 			correcto = unJugador.responderPregunta(laPregunta);
@@ -68,12 +68,6 @@ public class ListaJugadores {
 				unJugador.recibirDadoExtra();
 				correcto=false;
 			}
-		}
-
-		itr=this.getIterador();
-		
-		while(itr.hasNext() && !fin) {
-			unJugador=itr.next();
 			int tirada=unJugador.tirarDados();
 			unJugador.avanzarCasilla(tirada);
 			int pos = unJugador.getPosicion();

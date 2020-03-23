@@ -60,18 +60,11 @@ public class Tablero {
  		boolean winner = false;
  		Tablero tableroJuego = Tablero.getMiTablero();
  		Casilla casillaActual = tableroJuego.buscarCasillaPorPosicion(pPos);
- 		winner = casillaActual.usar(pJugador);
- 		
- 	}
- 	
- 	public void usarCasillaIntercambiarPosicion(int pPos, Jugador pJugador1, Jugador pJugador2) 
- 	{
- 		Tablero tableroJuego = Tablero.getMiTablero();
- 		Casilla casillaActual = tableroJuego.buscarCasillaPorPosicion(pPos);
- 		casillaActual.usar(pJugador1);
- 		casillaActual.usar(pJugador2);
- 		
- 	}
- 	
+ 		casillaActual.usar(pJugador);
+ 		if(pJugador.getPosicion() >= this.tablero.size() ) {
+ 			winner = true;
+ 		}
+ 		return winner;
+ 	}	
 	
 }
