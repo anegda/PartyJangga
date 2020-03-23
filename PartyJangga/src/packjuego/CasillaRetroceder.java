@@ -2,8 +2,6 @@
  * 
  */
 package packjuego;
-
-
 public class CasillaRetroceder extends Casilla{
 	
 	private int cantRetroceder;
