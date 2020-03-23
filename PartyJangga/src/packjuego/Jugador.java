@@ -1,5 +1,6 @@
 package packjuego;
 public class Jugador {
+	
 	private int id;
 	private String nombre;
 	private int posicion;
@@ -25,14 +26,26 @@ public class Jugador {
 		return(tirada);
 	}
 	
-	public void responderPregunta() {
-		
+	public int getPosicion() {
+		return this.posicion;
+	}
+	
+	public void setPosicion(int pPosicion) {
+		this.posicion = pPosicion;
+	}
+	
+	public boolean responderPregunta(Pregunta pPregunta) {
+		boolean correcto = false;
+		String pPrevioPregunta = "¿Que opcion elegiras?, si fallas te quedas sin dado crack: ";
+		String miRespuesta = Teclado.getMiTeclado().leerString(pPrevioPregunta);
+		correcto = pPregunta.completado(miRespuesta);		
+		return correcto;
 	}
 	
 	public boolean avanzarCasilla(int pAvanzar) {
 		this.posicion=this.posicion+pAvanzar;
 		boolean fin=false;
-		if(this.posicion>64) {
+		if(this.posicion>=66) {
 			fin=true;
 		}
 		return fin;

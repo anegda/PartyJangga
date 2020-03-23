@@ -27,8 +27,8 @@ public class ListaPruebas {
 		InputStream fich=null;
 		try {
 			fich = new FileInputStream(System.getProperty("user.dir")+File.separator+"prueba.txt");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		Scanner sc = new Scanner(fich);
