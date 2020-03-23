@@ -1,9 +1,12 @@
 package packjuego;
 import java.util.*;
 public class ListaJugadores {
+	
 	private ArrayList<Jugador> lista;
 	private static ListaJugadores miListaJugadores=null;
+	
 	//no tiene maximo de jugadores
+	
 	private ListaJugadores() {
 		this.lista=new ArrayList<Jugador>();
 	}
@@ -11,24 +14,26 @@ public class ListaJugadores {
 	public static synchronized ListaJugadores getMiListaJugadores() {
 		if (ListaJugadores.miListaJugadores==null) {
 			ListaJugadores.miListaJugadores=new ListaJugadores();
-	}
-	return(ListaJugadores.miListaJugadores);
+		}
+		return(ListaJugadores.miListaJugadores);
 	}
 	
 	private Iterator<Jugador> getIterador() {
 		return(this.lista.iterator());
 	}
 	
-	public void annadirJugador(Jugador pJugador) {
+	public void addJugador(Jugador pJugador) {
 		this.lista.add(pJugador);
 	}
 	
 	public void eliminarJugador(Jugador pJugador) {
 		this.lista.remove(pJugador);
 	}
+	
 	//reordenar un arrayList
+	
 	public void decidirTurno() {
-		
+
 	}
 	
 	public Jugador buscarJugadorPorID(int pID) {
@@ -50,12 +55,19 @@ public class ListaJugadores {
 	
 	public boolean realizarTurno() {
 		Iterator<Jugador> itr=this.getIterador();
+		Tablero miTablero = Tablero.getMiTablero();
+		ListaPreguntas miListaPreguntas = ListaPreguntas.getMiListaPreguntas();
 		Jugador unJugador;
-		boolean fin;
+		boolean correcto = false;
+		boolean fin = false;
 		while (itr.hasNext()) {
 			unJugador=itr.next();
-			ListaPreguntas.imprimirPregunta();
-			unJugador.responderPregunta();
+			Pregunta laPregunta = miListaPreguntas.realizarPregunta();
+			correcto = unJugador.responderPregunta(laPregunta);
+			if (correcto) {
+				unJugador.recibirDadoExtra();
+				correcto=false;
+			}
 		}
 
 		itr=this.getIterador();
@@ -64,7 +76,8 @@ public class ListaJugadores {
 			unJugador=itr.next();
 			int tirada=unJugador.tirarDados();
 			unJugador.avanzarCasilla(tirada);
-			fin=Tablero.usarCasillaPos(unJugador.getPosicion());
+			int pos = unJugador.getPosicion();
+			fin = miTablero.usarCasillaPos(pos, unJugador);
 		}
 		return(fin);
 	}
