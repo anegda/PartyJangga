@@ -39,6 +39,7 @@ public class ListaPreguntas {
 		Iterator<Pregunta> itr = ListaPreguntas.getMiListaPreguntas().getIterador();
 		Pregunta unaPregunta = itr.next();
 		unaPregunta.imprimirPregunta();
+		ListaPreguntas.getMiListaPreguntas().rotarPregunta();
 		return unaPregunta;
 	}
 	

@@ -39,7 +39,6 @@ public class Jugador {
 		String pPrevioPregunta = "¿Que opcion elegiras?, si fallas te quedas sin dado crack: ";
 		String miRespuesta = Teclado.getMiTeclado().leerString(pPrevioPregunta);
 		correcto = pPregunta.completado(miRespuesta);
-		ListaPreguntas.getMiListaPreguntas().rotarPregunta();
 		
 		return correcto;
 	}
