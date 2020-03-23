@@ -63,8 +63,10 @@ public class ListaJugadores {
 		while(itr.hasNext() && !fin) {
 			unJugador=itr.next();
 			int tirada=unJugador.tirarDados();
-			unJugador.avanzarCasilla(tirada);
-			fin=Tablero.usarCasillaPos(unJugador.getPosicion());
+			fin=unJugador.avanzarCasilla(tirada);
+			if(!fin) {
+				fin=Tablero.usarCasillaPos(unJugador.getPosicion());
+			}
 		}
 		return(fin);
 	}
