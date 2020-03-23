@@ -89,8 +89,7 @@ public class ListaJugadores {
 		Jugador unJugador;
 		boolean correcto = false;
 		boolean fin = false;
-		//se juegan el dado extra
-		while (itr.hasNext()) {
+		while (itr.hasNext() && !fin) {
 			unJugador=itr.next();
 			Pregunta laPregunta = miListaPreguntas.realizarPregunta();
 			correcto = unJugador.responderPregunta(laPregunta);
@@ -98,11 +97,6 @@ public class ListaJugadores {
 				unJugador.recibirDadoExtra();
 				correcto=false;
 			}
-		}
-		//Realizan el turno en sí
-		itr=this.getIterador();
-		while(itr.hasNext() && !fin) {
-			unJugador=itr.next();
 			int tirada=unJugador.tirarDados();
 			fin=unJugador.avanzarCasilla(tirada);
 			if(!fin) {

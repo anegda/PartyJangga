@@ -48,8 +48,7 @@ public class Tablero {
  		Iterator<Casilla> itr = this.getIterador();
  		Casilla unaCasilla = null;
  		int pos = 0;
- 		while (itr.hasNext() && pos != pPosicion) 
- 		{
+ 		while (itr.hasNext() && pos != pPosicion) {
  			unaCasilla = itr.next();
  			pos++;
  		}	
@@ -57,10 +56,14 @@ public class Tablero {
  	}
  	public boolean usarCasillaPos(int pPos, Jugador pJugador) 
  	{
+ 		boolean winner = false;
  		Tablero tableroJuego = Tablero.getMiTablero();
  		Casilla casillaActual = tableroJuego.buscarCasillaPorPosicion(pPos);
  		casillaActual.usar(pJugador);
- 		
- 	}
+ 		if(pJugador.getPosicion() >= this.tablero.size() ) {
+ 			winner = true;
+ 		}
+ 		return winner;
+ 	}	
 	
 }
