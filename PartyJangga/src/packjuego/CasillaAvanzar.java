@@ -10,8 +10,7 @@ public class CasillaAvanzar extends Casilla{
 	
 	//constructora
 	
-	public CasillaAvanzar(int idCasilla, int pAvanzar)
-	{
+	public CasillaAvanzar(int idCasilla, int pAvanzar){
 		super(idCasilla);
 		cantAvanzar = pAvanzar;
 	}

@@ -8,8 +8,7 @@ public class CasillaPrueba extends Casilla {
 
 	//constructora
 
-	public CasillaPrueba(int idCasilla)
-	{
+	public CasillaPrueba(int idCasilla){
 		super(idCasilla);
 	}
 	
