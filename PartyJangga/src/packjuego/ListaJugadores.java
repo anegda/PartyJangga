@@ -1,5 +1,6 @@
 package packjuego;
 import java.util.*;
+import java.util.Random;
 
 public class ListaJugadores {
 	
@@ -29,6 +30,13 @@ public class ListaJugadores {
 	
 	public void eliminarJugador(Jugador pJugador) {
 		this.lista.remove(pJugador);
+	}
+	
+	public Jugador elegirJugadorRandom() {
+		Random r = new Random();
+		int nJugador = r.nextInt(this.lista.size()) + 1;
+		Jugador jugadorParaIntercambiar = this.lista.get(nJugador-1);
+		return jugadorParaIntercambiar;
 	}
 	
 	//reordenar un arrayList
@@ -109,10 +117,14 @@ public class ListaJugadores {
 			}
 			int tirada=unJugador.tirarDados();
 			fin=unJugador.avanzarCasilla(tirada);
-			if(!fin) {			
+			if(!fin) {	
 				fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
 			}
 		}
 		return(fin);
 	}
+	public void resetear() {
+		this.lista.clear();
+	}
+	
  }
