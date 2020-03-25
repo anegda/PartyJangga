@@ -5,7 +5,6 @@ package packjuego;
 
 
 public abstract class Casilla {
-	
 	//atributo
 	protected int IdCasilla;
 	
@@ -14,6 +13,5 @@ public abstract class Casilla {
 		IdCasilla = idCasilla;
 	}
 
-	//metodos adicionales
 	public abstract void usar(Jugador pJugador);
 }
