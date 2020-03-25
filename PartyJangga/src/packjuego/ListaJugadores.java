@@ -38,24 +38,6 @@ public class ListaJugadores {
 		Jugador jugadorParaIntercambiar = this.lista.get(nJugador-1);
 		return jugadorParaIntercambiar;
 	}
-	
-	//reordenar un arrayList
-	public void decidirTurno() {
-		Jugador unJugador=null;
-		Iterator<Jugador> itr=this.getIterador();
-		//Primero tiran todos el dado, para guardar el valor de la tirada los jugadores avanzan hasta la posicion que han sacado
-		while(itr.hasNext()) {
-			unJugador=itr.next();
-			unJugador.avanzarCasilla(unJugador.tirarDados());
-			this.lista.remove(unJugador);
-			this.anadirOrdenadoJugador(unJugador);
-		}
-		Iterator<Jugador> itr2=this.getIterador();
-		while(itr.hasNext()) {
-			unJugador=itr2.next();
-			unJugador.retrocederCasilla(unJugador.getPosicion());
-		}
-	}
 	//Metodo que comparando las tiradas ordena el array de jugadores para decidir turno
 	private void anadirOrdenadoJugador(Jugador pJugador){
 		Iterator<Jugador> itr=this.getIterador();
@@ -109,6 +91,7 @@ public class ListaJugadores {
 		boolean fin = false;
 		while (itr.hasNext() && !fin) {
 			unJugador=itr.next();
+			System.out.println(unJugador.getNombre()+" es tu turno!");
 			Pregunta laPregunta = miListaPreguntas.realizarPregunta();
 			correcto = unJugador.responderPregunta(laPregunta);
 			if (correcto) {

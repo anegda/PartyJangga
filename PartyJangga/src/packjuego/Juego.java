@@ -26,10 +26,6 @@ public class Juego {
 		unaPartida.setListaPreguntas();
 		unaPartida.setListaPruebas();
 		ListaJugadores lista = ListaJugadores.getMiListaJugadores();
-		//al inicio de toda partida se decide el turno
-		/*
-		lista.decidirTurno();
-		*/
 		//se empieza con la partida
 		boolean fin=false;
 		while(!fin) {

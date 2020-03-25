@@ -9,13 +9,14 @@ import org.junit.Test;
 public class ListaJugadoresTest {
 
 	Jugador j1, j2, j3, j4;
-	
+	ListaPreguntas listaP=ListaPreguntas.getMiListaPreguntas();
 	@Before
 	public void setUp() {
 		j1 = new Jugador(1, "Ane", 1, false, false);
 		j2 = new Jugador(2, "Urko", 1, false, false);
 		j3 = new Jugador(3, "Hugo", 1, false, false);
 		j4 = new Jugador(4, "Marcos", 1, false, false);
+		listaP.leerFicheroPreguntas();
 	}
 	//atributos
 
@@ -104,20 +105,6 @@ public class ListaJugadoresTest {
 		assertFalse(unJugador.equals(j2));
 		assertFalse(unJugador.equals(j3));
 		assertFalse(unJugador.equals(j4));
-	}
-
-	@Test
-	public void testDecidirTurno() {
-		/*
-		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
-		Jugador unJugador = null;
-		miListaJugadores.addJugador(j1);
-		miListaJugadores.addJugador(j2);
-		miListaJugadores.addJugador(j3);
-		miListaJugadores.addJugador(j4);
-		
-		miListaJugadores.decidirTurno();
-		*/
 	}
 
 	@Test

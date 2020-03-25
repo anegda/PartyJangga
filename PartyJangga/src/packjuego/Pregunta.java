@@ -31,6 +31,9 @@ public class Pregunta {
 			System.out.println("Has acertado la pregunta!");
 			correcto = true;
 		}
+		else {
+			System.out.println("Respuesta incorrecta");
+		}
 		return correcto;
 	}
 }

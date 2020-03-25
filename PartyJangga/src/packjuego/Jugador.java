@@ -79,4 +79,7 @@ public class Jugador {
 		}
 		return mismo;
 	}
+	public String getNombre() {
+		return this.nombre;
+	}
 }
