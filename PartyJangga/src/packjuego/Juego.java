@@ -20,20 +20,20 @@ public class Juego {
 	//Otros metodos
 	
 	public void jugarPartida() {
-		//al inicio de toda partida se decide el turno
 		Juego unaPartida = Juego.getMiJuego();
 		unaPartida.setGrupoJugadores();
 		unaPartida.setTablero();
 		unaPartida.setListaPreguntas();
-		
+		unaPartida.setListaPruebas();
 		ListaJugadores lista = ListaJugadores.getMiListaJugadores();
+		//al inicio de toda partida se decide el turno
 		lista.decidirTurno();
-		
 		//se empieza con la partida
 		boolean fin=false;
 		while(!fin) {
 			fin=lista.realizarTurno();
 		}
+		System.out.println("El ganador de esta apasionante partida sido : ");
 	}
 	
 	public void addJugador(int pID, String pNombre, int pPosicion, boolean pGanador, boolean pDadoExtra) {
@@ -62,6 +62,11 @@ public class Juego {
 	}
 	
 	public void setListaPreguntas() {
-		
+		ListaPreguntas listaPreguntas = ListaPreguntas.getMiListaPreguntas();
+		listaPreguntas.leerFicheroPreguntas();
+	}
+	public void setListaPruebas() {
+		ListaPruebas listaPruebas = ListaPruebas.getMiListaPruebas();
+		listaPruebas.leerFicheroPruebas();
 	}
 }

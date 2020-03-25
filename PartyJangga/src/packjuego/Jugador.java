@@ -43,12 +43,12 @@ public class Jugador {
 	}
 	
 	public boolean avanzarCasilla(int pAvanzar) {
+		boolean winner = false;
 		this.posicion=this.posicion+pAvanzar;
-		boolean fin=false;
-		if(this.posicion>=66) {
-			fin=true;
+		if (this.posicion >= Tablero.getMiTablero().numCasillas()) {
+			winner = true;
 		}
-		return fin;
+		return winner;
 	}
 	
 	public void retrocederCasilla(int pRetroceder) {
