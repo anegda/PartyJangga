@@ -42,13 +42,8 @@ public class Jugador {
 		return correcto;
 	}
 	
-	public boolean avanzarCasilla(int pAvanzar) {
+	public void avanzarCasilla(int pAvanzar) {
 		this.posicion=this.posicion+pAvanzar;
-		boolean fin=false;
-		if(this.posicion>=66) {
-			fin=true;
-		}
-		return fin;
 	}
 	
 	public void retrocederCasilla(int pRetroceder) {

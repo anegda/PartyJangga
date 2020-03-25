@@ -15,15 +15,13 @@ public class Tablero {
 	
 	//constructora
 	
-	private Tablero()
-	{
+	private Tablero(){
 		this.tablero= new ArrayList<Casilla>();
 	}
 	
 	//metodos adicionales
 	
-	private Iterator<Casilla> getIterador()
-	{
+	private Iterator<Casilla> getIterador(){
 		return this.tablero.iterator();
 	}
 	
@@ -35,16 +33,14 @@ public class Tablero {
 		this.tablero.remove(pCasilla);
 	}
 	
- 	public static Tablero getMiTablero() 
-	{
+ 	public static Tablero getMiTablero() {
 		if(Tablero.miTablero==null) {
 			Tablero.miTablero=new Tablero();
 		}
 		return Tablero.miTablero;
 	}
  	
- 	public Casilla buscarCasillaPorPosicion(int pPosicion) 
- 	{
+ 	public Casilla buscarCasillaPorPosicion(int pPosicion) {
  		Iterator<Casilla> itr = this.getIterador();
  		Casilla unaCasilla = null;
  		int pos = 0;
@@ -54,8 +50,7 @@ public class Tablero {
  		}	
  		return unaCasilla;
  	}
- 	public boolean usarCasillaPos(int pPos, Jugador pJugador) 
- 	{
+ 	public boolean usarCasillaPos(int pPos, Jugador pJugador) {
  		boolean winner = false;
  		Tablero tableroJuego = Tablero.getMiTablero();
  		Casilla casillaActual = tableroJuego.buscarCasillaPorPosicion(pPos);

@@ -25,7 +25,7 @@ public class Juego {
 		unaPartida.setGrupoJugadores();
 		unaPartida.setTablero();
 		unaPartida.setListaPreguntas();
-		
+		unaPartida.setListaPruebas();
 		ListaJugadores lista = ListaJugadores.getMiListaJugadores();
 		lista.decidirTurno();
 		
@@ -61,6 +61,11 @@ public class Juego {
 		
 	}
 	public void setListaPreguntas() {
-		
+		ListaPreguntas listaPreguntas = ListaPreguntas.getMiListaPreguntas();
+		listaPreguntas.leerFicheroPreguntas();
+	}
+	public void setListaPruebas() {
+		ListaPruebas listaPruebas = ListaPruebas.getMiListaPruebas();
+		listaPruebas.leerFicheroPruebas();
 	}
 }

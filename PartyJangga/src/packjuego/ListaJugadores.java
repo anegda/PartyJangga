@@ -98,10 +98,8 @@ public class ListaJugadores {
 				correcto=false;
 			}
 			int tirada=unJugador.tirarDados();
-			fin=unJugador.avanzarCasilla(tirada);
-			if(!fin) {
-				fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
-			}
+			unJugador.avanzarCasilla(tirada);
+			fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
 		}
 		return(fin);
 	}
