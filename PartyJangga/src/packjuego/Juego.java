@@ -33,7 +33,7 @@ public class Juego {
 		while(!fin) {
 			fin=lista.realizarTurno();
 		}
-		System.out.println("El ganador de esta apasionante partida sido : ");
+		lista.buscarGanador();
 	}
 	
 	public void addJugador(int pID, String pNombre, int pPosicion, boolean pGanador, boolean pDadoExtra) {

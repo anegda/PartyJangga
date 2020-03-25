@@ -82,6 +82,16 @@ public class ListaJugadores {
 		return(unJugador);
 	}
 	
+	public void buscarGanador() {
+		boolean fin = false;
+		Jugador ganador=null;
+		Iterator<Jugador> itr=this.getIterador();
+		while (itr.hasNext() && !fin) {
+			ganador=itr.next();
+			fin = ganador.comprobarSiHaGanado();
+		}	
+	}
+	
 	public boolean realizarTurno() {
 		Iterator<Jugador> itr=this.getIterador();
 		Tablero miTablero = Tablero.getMiTablero();

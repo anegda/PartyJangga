@@ -34,6 +34,14 @@ public class Jugador {
 		this.posicion = pPosicion;
 	}
 	
+	public boolean comprobarSiHaGanado() {
+		if (this.ganador) {
+			System.out.println("El jugador '" + this.nombre + "' con el id '" + this.id + "' es el ganador de la partida, enhorabuena.");
+		}
+		return this.ganador;
+	}
+	
+	
 	public boolean responderPregunta(Pregunta pPregunta) {
 		boolean correcto = false;
 		String pPrevioPregunta = "¿Que opcion elegiras?, si fallas te quedas sin dado crack: ";
@@ -46,6 +54,7 @@ public class Jugador {
 		boolean winner = false;
 		this.posicion=this.posicion+pAvanzar;
 		if (this.posicion >= Tablero.getMiTablero().numCasillas()) {
+			this.setGanador();
 			winner = true;
 		}
 		return winner;
