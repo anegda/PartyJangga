@@ -9,10 +9,9 @@ public class CasillaCambiarPosicion extends Casilla{
 	int posIntercambio;
 	//constructora
 	
-	public CasillaCambiarPosicion(int idCasilla, int pPosIntercambio)
+	public CasillaCambiarPosicion(int idCasilla)
 	{
 		super(idCasilla);
-		posIntercambio = pPosIntercambio;
 	}
 
 	//metodos adicionales
@@ -32,5 +31,4 @@ public class CasillaCambiarPosicion extends Casilla{
 		pJugadorEnCasilla.setPosicion(posJugadorRandom);
 		JugadorRandom.setPosicion(posJugadorEnCasilla);
 	}
-	
 }

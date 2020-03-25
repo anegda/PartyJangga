@@ -27,7 +27,9 @@ public class Juego {
 		unaPartida.setListaPruebas();
 		ListaJugadores lista = ListaJugadores.getMiListaJugadores();
 		//al inicio de toda partida se decide el turno
+		/*
 		lista.decidirTurno();
+		*/
 		//se empieza con la partida
 		boolean fin=false;
 		while(!fin) {
@@ -58,7 +60,7 @@ public class Juego {
 		}
 	}
 	public void setTablero() {
-		
+		Tablero.getMiTablero().setTablero();
 	}
 	
 	public void setListaPreguntas() {
