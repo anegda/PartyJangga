@@ -17,7 +17,20 @@ public class CasillaCambiarPosicion extends Casilla{
 
 	//metodos adicionales
 	
-	public void usar(Jugador pJugador1) {
-		pJugador1.setPosicion(posIntercambio);
+	public void usar(Jugador pJugadorEnCasilla) {
+		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
+		Jugador JugadorRandom = null;
+		boolean distinto = false;
+		while (!distinto) {
+			JugadorRandom = miListaJugadores.elegirJugadorRandom();
+			if (!JugadorRandom.equals(pJugadorEnCasilla)) {
+				distinto = true;
+			}
+		}
+		int posJugadorEnCasilla = pJugadorEnCasilla.getPosicion();
+		int posJugadorRandom = JugadorRandom.getPosicion();
+		pJugadorEnCasilla.setPosicion(posJugadorRandom);
+		JugadorRandom.setPosicion(posJugadorEnCasilla);
 	}
+	
 }
