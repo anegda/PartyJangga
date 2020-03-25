@@ -21,17 +21,9 @@ public class ListaPreguntasTest {
 		//Ambos test se realizan a la vez
 		ListaPreguntas lista= ListaPreguntas.getMiListaPreguntas();
 		lista.leerFicheroPreguntas();
-		//Imprime la primera Pregunta
+		//Imprime la Pregunta
 		Pregunta unaPregunta=lista.realizarPregunta();
-		//Miramos a ver si coge bien la respuesta
-		assertTrue(unaPregunta.completado("a"));
-		assertFalse(unaPregunta.completado("b"));
-		assertFalse(unaPregunta.completado("c"));
-		assertFalse(unaPregunta.completado("d"));
-		//Imprime la segunda Pregunta
+		//Imprime la Pregunta
 		lista.realizarPregunta();
-		Pregunta terceraPregunta=lista.realizarPregunta();
-		//Confirmamos que coge bien la respuesta correcta
-		assertTrue(terceraPregunta.completado("b"));
 	}
 }

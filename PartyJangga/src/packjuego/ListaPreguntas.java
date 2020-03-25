@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ListaPreguntas {
@@ -51,16 +52,15 @@ public class ListaPreguntas {
 	}
 	
 	public Pregunta realizarPregunta() {
-		Pregunta unaPregunta = this.listaPreguntas.get(0);
+		Pregunta unaPregunta = elegirRandomPregunta();
 		unaPregunta.imprimirPregunta();
-		this.rotarPregunta();
 		return unaPregunta;
 	}
-	private void rotarPregunta( ) {
-		Pregunta unaPregunta=null;
-		unaPregunta=this.listaPreguntas.get(0);
-		this.listaPreguntas.remove(0);
-		this.listaPreguntas.add(unaPregunta);
+	private Pregunta elegirRandomPregunta( ) {
+		Random r = new Random();
+		int nPregunta = r.nextInt(this.listaPreguntas.size()) + 1;
+		Pregunta laPregunta = this.listaPreguntas.get(nPregunta-1);
+		return laPregunta;
 	}
 	
 }

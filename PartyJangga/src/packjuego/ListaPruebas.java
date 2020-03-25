@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ListaPruebas {
 	private ArrayList<Prueba> listaPruebas;
@@ -39,15 +40,14 @@ public class ListaPruebas {
 		}
 		sc.close();
 	}
-	private void rotarPruebas() {
-		Prueba unaPrueba=null;
-		unaPrueba=this.listaPruebas.get(0);
-		this.listaPruebas.remove(0);
-		this.listaPruebas.add(unaPrueba);
+	private Prueba elegirRandomPrueba( ) {
+		Random r = new Random();
+		int nPrueba = r.nextInt(this.listaPruebas.size()) + 1;
+		Prueba laPrueba = this.listaPruebas.get(nPrueba-1);
+		return laPrueba;
 	}
 	public void imprimirPrueba() {
-		Prueba unaPrueba=this.listaPruebas.get(0);
+		Prueba unaPrueba=this.elegirRandomPrueba();
 		unaPrueba.imprimir();
-		this.rotarPruebas();
 	}
 }
