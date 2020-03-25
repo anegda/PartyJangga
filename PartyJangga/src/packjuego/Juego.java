@@ -60,6 +60,7 @@ public class Juego {
 	public void setTablero() {
 		
 	}
+	
 	public void setListaPreguntas() {
 		
 	}

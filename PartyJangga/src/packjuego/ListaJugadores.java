@@ -100,6 +100,7 @@ public class ListaJugadores {
 			int tirada=unJugador.tirarDados();
 			fin=unJugador.avanzarCasilla(tirada);
 			if(!fin) {
+				
 				fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
 			}
 		}
