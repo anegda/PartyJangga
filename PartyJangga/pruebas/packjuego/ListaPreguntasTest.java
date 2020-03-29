@@ -1,7 +1,5 @@
 package packjuego;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +20,7 @@ public class ListaPreguntasTest {
 		ListaPreguntas lista= ListaPreguntas.getMiListaPreguntas();
 		lista.leerFicheroPreguntas();
 		//Imprime la Pregunta
-		Pregunta unaPregunta=lista.realizarPregunta();
+		lista.realizarPregunta();
 		//Imprime la Pregunta
 		lista.realizarPregunta();
 	}
