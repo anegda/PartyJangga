@@ -37,23 +37,6 @@ public class ListaJugadores {
 		int nJugador = r.nextInt(this.lista.size()) + 1;
 		Jugador jugadorParaIntercambiar = this.lista.get(nJugador-1);
 		return jugadorParaIntercambiar;
-	}
-	//Metodo que comparando las tiradas ordena el array de jugadores para decidir turno
-	private void anadirOrdenadoJugador(Jugador pJugador){
-		Iterator<Jugador> itr=this.getIterador();
-		Jugador unJugador=null;
-		boolean menor=false;
-		int pos=0;
-		while(itr.hasNext() && !menor) {
-			unJugador=itr.next();
-			if(unJugador.getPosicion()<pJugador.getPosicion()) {
-				menor=true;
-			}
-			else {
-				pos=pos+1;
-			}
-		}
-		this.lista.add(pos,pJugador);
 	}	
 	
 	public Jugador buscarJugadorPorID(int pID) {
@@ -102,6 +85,7 @@ public class ListaJugadores {
 		}
 		return(fin);
 	}
+	
 	public void resetear() {
 		this.lista.clear();
 	}
