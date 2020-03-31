@@ -72,21 +72,12 @@ public class ListaJugadores {
 		return(unJugador);
 	}
 	
-	public void buscarGanador() {
-		boolean fin = false;
-		Jugador ganador=null;
-		Iterator<Jugador> itr=this.getIterador();
-		while (itr.hasNext() && !fin) {
-			ganador=itr.next();
-			fin = ganador.comprobarSiHaGanado();
-		}	
-	}
-	
 	public boolean realizarTurno() {
 		Iterator<Jugador> itr=this.getIterador();
 		Tablero miTablero = Tablero.getMiTablero();
 		ListaPreguntas miListaPreguntas = ListaPreguntas.getMiListaPreguntas();
-		Jugador unJugador;
+		Teclado miTeclado= Teclado.getMiTeclado();
+		Jugador unJugador=null;
 		boolean correcto = false;
 		boolean fin = false;
 		while (itr.hasNext() && !fin) {
@@ -100,9 +91,14 @@ public class ListaJugadores {
 			}
 			int tirada=unJugador.tirarDados();
 			fin=unJugador.avanzarCasilla(tirada);
+			System.out.println(unJugador.getNombre() + " estás en la casilla " + unJugador.getPosicion() + " sigue asi");
 			if(!fin) {	
 				fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
 			}
+			else {
+				System.out.println("Enhorabuena " + unJugador.getNombre() + " has ganado!!");
+			}
+			System.out.println();
 		}
 		return(fin);
 	}

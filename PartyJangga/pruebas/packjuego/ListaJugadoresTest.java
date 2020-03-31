@@ -12,10 +12,10 @@ public class ListaJugadoresTest {
 	ListaPreguntas listaP=ListaPreguntas.getMiListaPreguntas();
 	@Before
 	public void setUp() {
-		j1 = new Jugador(1, "Ane", 1, false, false);
-		j2 = new Jugador(2, "Urko", 1, false, false);
-		j3 = new Jugador(3, "Hugo", 1, false, false);
-		j4 = new Jugador(4, "Marcos", 1, false, false);
+		j1 = new Jugador(1, "Ane", 1, false);
+		j2 = new Jugador(2, "Urko", 1, false);
+		j3 = new Jugador(3, "Hugo", 1, false);
+		j4 = new Jugador(4, "Marcos", 1, false);
 		listaP.leerFicheroPreguntas();
 	}
 	//atributos
@@ -105,19 +105,6 @@ public class ListaJugadoresTest {
 		assertFalse(unJugador.equals(j2));
 		assertFalse(unJugador.equals(j3));
 		assertFalse(unJugador.equals(j4));
-	}
-
-	@Test
-	public void testBuscarGanador() {
-		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
-		miListaJugadores.addJugador(j1);
-		miListaJugadores.addJugador(j2);
-		miListaJugadores.addJugador(j3);
-		miListaJugadores.addJugador(j4);
-		
-		//si ha todos los jugadores los pusieramos como ganador a true saltaria el mensaje de ganador para todos, pero como no puede darse esa situacion no pasa nada
-		
-		miListaJugadores.buscarGanador();
 	}
 
 	@Test

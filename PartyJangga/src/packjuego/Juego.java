@@ -25,18 +25,18 @@ public class Juego {
 		unaPartida.setTablero();
 		unaPartida.setListaPreguntas();
 		unaPartida.setListaPruebas();
+		System.out.println("Empieza la partida \n");
 		ListaJugadores lista = ListaJugadores.getMiListaJugadores();
 		//se empieza con la partida
 		boolean fin=false;
 		while(!fin) {
 			fin=lista.realizarTurno();
 		}
-		lista.buscarGanador();
 	}
 	
-	public void addJugador(int pID, String pNombre, int pPosicion, boolean pGanador, boolean pDadoExtra) {
+	public void addJugador(int pID, String pNombre, int pPosicion, boolean pDadoExtra) {
 		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
-		Jugador unJugador = new Jugador(pID, pNombre, pPosicion, pGanador, pDadoExtra);
+		Jugador unJugador = new Jugador(pID, pNombre, pPosicion, pDadoExtra);
 		miListaJugadores.addJugador(unJugador);
 	}
 	
@@ -52,7 +52,7 @@ public class Juego {
 		while (pos < numJugadores) {
 			pos++;
 			String nombre = miTeclado.leerString(pMensajeNombre);
-			Juego.getMiJuego().addJugador(pos, nombre, 1, false, false);
+			Juego.getMiJuego().addJugador(pos, nombre, 1, false);
 		}
 	}
 	public void setTablero() {
