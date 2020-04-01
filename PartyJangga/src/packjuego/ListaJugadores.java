@@ -79,7 +79,7 @@ public class ListaJugadores {
 				fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
 			}
 			else {
-				System.out.println("Enhorabuena " + unJugador.getNombre() + " has ganado!!");
+				System.out.println("/nEnhorabuena " + unJugador.getNombre() + " has ganado!!");
 			}
 			System.out.println();
 		}
