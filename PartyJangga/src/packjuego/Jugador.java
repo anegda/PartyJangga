@@ -4,14 +4,12 @@ public class Jugador {
 	private int id;
 	private String nombre;
 	private int posicion;
-	private boolean ganador;
 	private boolean dadoExtra;
 	
-	public Jugador(int pID, String pNombre, int pPosicion, boolean pGanador, boolean pDadoExtra) {
+	public Jugador(int pID, String pNombre, int pPosicion, boolean pDadoExtra) {
 		this.id=pID;
 		this.nombre=pNombre;
 		this.posicion=pPosicion;
-		this.ganador=pGanador;
 		this.dadoExtra=pDadoExtra;
 	}
 	
@@ -34,17 +32,9 @@ public class Jugador {
 		this.posicion = pPosicion;
 	}
 	
-	public boolean comprobarSiHaGanado() {
-		if (this.ganador) {
-			System.out.println("El jugador '" + this.nombre + "' con el id '" + this.id + "' es el ganador de la partida, enhorabuena.");
-		}
-		return this.ganador;
-	}
-	
-	
 	public boolean responderPregunta(Pregunta pPregunta) {
 		boolean correcto = false;
-		String pPrevioPregunta = "¿Que opcion elegiras?, si fallas te quedas sin dado crack: ";
+		String pPrevioPregunta = "¿Que opcion elegirás?, si fallas te quedas sin dado crack: ";
 		String miRespuesta = Teclado.getMiTeclado().leerString(pPrevioPregunta);
 		correcto = pPregunta.completado(miRespuesta);		
 		return correcto;
@@ -54,7 +44,6 @@ public class Jugador {
 		boolean winner = false;
 		this.posicion=this.posicion+pAvanzar;
 		if (this.posicion >= Tablero.getMiTablero().numCasillas()) {
-			this.setGanador();
 			winner = true;
 		}
 		return winner;
@@ -66,10 +55,6 @@ public class Jugador {
 	
 	public void recibirDadoExtra() {
 		this.dadoExtra=true;
-	}
-	
-	public void setGanador() {
-		this.ganador=true;
 	}
 	
 	public boolean tieneEsteId(int pId) {

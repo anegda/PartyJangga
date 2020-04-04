@@ -55,21 +55,12 @@ public class ListaJugadores {
 		return(unJugador);
 	}
 	
-	public void buscarGanador() {
-		boolean fin = false;
-		Jugador ganador=null;
-		Iterator<Jugador> itr=this.getIterador();
-		while (itr.hasNext() && !fin) {
-			ganador=itr.next();
-			fin = ganador.comprobarSiHaGanado();
-		}	
-	}
-	
 	public boolean realizarTurno() {
 		Iterator<Jugador> itr=this.getIterador();
 		Tablero miTablero = Tablero.getMiTablero();
 		ListaPreguntas miListaPreguntas = ListaPreguntas.getMiListaPreguntas();
-		Jugador unJugador;
+		Teclado miTeclado= Teclado.getMiTeclado();
+		Jugador unJugador=null;
 		boolean correcto = false;
 		boolean fin = false;
 		while (itr.hasNext() && !fin) {
@@ -83,17 +74,18 @@ public class ListaJugadores {
 			}
 			int tirada=unJugador.tirarDados();
 			fin=unJugador.avanzarCasilla(tirada);
+			System.out.println(unJugador.getNombre() + " estás en la casilla " + unJugador.getPosicion() + " sigue asi");
 			if(!fin) {	
 				fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
 			}
-			//decimos al jugador la posicion en la que ha acabado
-			int posActual = unJugador.getPosicion();
-			Integer.toString(posActual);
-			System.out.println(unJugador.getNombre() + " estas en la casilla: " + posActual);
-			System.out.println("\n");
+			else {
+				System.out.println("/nEnhorabuena " + unJugador.getNombre() + " has ganado!!");
+			}
+			System.out.println();
 		}
 		return(fin);
 	}
+	
 	public void resetear() {
 		this.lista.clear();
 	}

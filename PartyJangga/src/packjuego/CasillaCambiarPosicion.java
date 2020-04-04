@@ -17,18 +17,22 @@ public class CasillaCambiarPosicion extends Casilla{
 	//metodos adicionales
 	
 	public void usar(Jugador pJugadorEnCasilla) {
+		System.out.println("Has caido en una casilla de intercambiar posición");
 		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
-		Jugador JugadorRandom = null;
+		Jugador jugadorRandom = null;
 		boolean distinto = false;
 		while (!distinto) {
-			JugadorRandom = miListaJugadores.elegirJugadorRandom();
-			if (!JugadorRandom.equals(pJugadorEnCasilla)) {
+			jugadorRandom = miListaJugadores.elegirJugadorRandom();
+			if (!jugadorRandom.equals(pJugadorEnCasilla)) {
 				distinto = true;
 			}
 		}
 		int posJugadorEnCasilla = pJugadorEnCasilla.getPosicion();
-		int posJugadorRandom = JugadorRandom.getPosicion();
+		int posJugadorRandom = jugadorRandom.getPosicion();
 		pJugadorEnCasilla.setPosicion(posJugadorRandom);
-		JugadorRandom.setPosicion(posJugadorEnCasilla);
+		jugadorRandom.setPosicion(posJugadorEnCasilla);
+		System.out.println("Has intercambiado tu posición con " + jugadorRandom.getNombre());
+		System.out.println("Ahora " + pJugadorEnCasilla.getNombre() + " se encuentra en la posición " + pJugadorEnCasilla.getPosicion());
+		System.out.println("Ahora " + jugadorRandom.getNombre() + " se encuentra en la posición " + jugadorRandom.getPosicion());
 	}
 }

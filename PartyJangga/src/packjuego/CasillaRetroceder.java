@@ -14,6 +14,8 @@ public class CasillaRetroceder extends Casilla{
 	
 	//metodos adicionales
 	public void usar(Jugador pJugador) {
-		pJugador.retrocederCasilla(cantRetroceder);
+		System.out.println("Has caido en una casilla de retroceder");
+		pJugador.retrocederCasilla(this.cantRetroceder);
+		System.out.println("Has retrocedido " + this.cantRetroceder + " casillas");
 	}
 }

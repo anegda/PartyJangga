@@ -15,6 +15,6 @@ public class CasillaFinal extends Casilla{
 	//metodos adicionales
 
 	public void usar(Jugador pJugador) {
-		pJugador.setGanador();
+		System.out.println("Has llegado a la casilla final!");
 	}
 }

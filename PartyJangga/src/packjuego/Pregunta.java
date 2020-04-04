@@ -28,7 +28,7 @@ public class Pregunta {
 	public boolean completado(String pRespuesta){
 		boolean correcto = false;
 		if(this.respuesta.contentEquals(pRespuesta)) {
-			System.out.println("Has acertado la pregunta!");
+			System.out.println("Has acertado la pregunta!\n");
 			correcto = true;
 		}
 		else {
