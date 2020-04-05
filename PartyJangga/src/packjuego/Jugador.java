@@ -17,7 +17,7 @@ public class Jugador {
 		int tirada;
 		Dado unDado = Dado.getMiDado(6);
 		tirada=unDado.tirar();
-		if (dadoExtra==true) {
+		if (this.dadoExtra==true) {
 			tirada=tirada+unDado.tirar();
 			this.dadoExtra=false;
 		}
