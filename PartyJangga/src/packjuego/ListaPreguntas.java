@@ -38,8 +38,7 @@ public class ListaPreguntas {
 			fich = new FileInputStream(System.getProperty("user.dir")+File.separator+"preguntas.txt");
 		} 
 		catch (FileNotFoundException e) {
-
-			e.printStackTrace();
+			System.out.println("No existe el fichero");
 		}
 		Scanner sc = new Scanner(fich);
 		while(sc.hasNextLine()) {

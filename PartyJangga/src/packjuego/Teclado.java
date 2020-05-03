@@ -17,9 +17,11 @@ public class Teclado {
 	
 	//métodos adicionales
 	public int leerEntero(String pString) {
-		int n;
-		System.out.print(pString);
-		n = sc.nextInt();
+		int n=0;
+		while(n<2 || n>8) {
+			System.out.print(pString);
+			n = sc.nextInt();
+		}
 		return n;
 	}
 	public String leerString(String pString) {

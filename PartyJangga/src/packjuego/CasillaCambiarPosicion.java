@@ -6,12 +6,9 @@ package packjuego;
 
 public class CasillaCambiarPosicion extends Casilla{
 	
-	int posIntercambio;
 	//constructora
-	
-	public CasillaCambiarPosicion(int idCasilla)
-	{
-		super(idCasilla);
+	public CasillaCambiarPosicion(){
+		super();
 	}
 
 	//metodos adicionales

@@ -8,8 +8,8 @@ public class CasillaFinal extends Casilla{
 
 	//constructora
 	
-	public CasillaFinal(int idCasilla){
-		super(idCasilla);
+	public CasillaFinal(){
+		super();
 	}
 
 	//metodos adicionales

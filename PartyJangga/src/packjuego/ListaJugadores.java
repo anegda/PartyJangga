@@ -76,11 +76,12 @@ public class ListaJugadores {
 			fin=unJugador.avanzarCasilla(tirada);
 			System.out.println(unJugador.getNombre() + " estás en la casilla " + unJugador.getPosicion() + " sigue asi");
 			if(!fin) {	
-				fin=miTablero.usarCasillaPos(unJugador.getPosicion(), unJugador);
+				fin=miTablero.usarCasillaPos(unJugador);
 			}
 			else {
 				System.out.println("/nEnhorabuena " + unJugador.getNombre() + " has ganado!!");
 			}
+			System.out.println("--------------------------------------------------------------------------------------------------");
 			System.out.println();
 		}
 		return(fin);

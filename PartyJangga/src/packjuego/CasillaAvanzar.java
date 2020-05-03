@@ -10,9 +10,9 @@ public class CasillaAvanzar extends Casilla{
 	
 	//constructora
 	
-	public CasillaAvanzar(int idCasilla, int pAvanzar){
-		super(idCasilla);
-		cantAvanzar = pAvanzar;
+	public CasillaAvanzar(int pAvanzar){
+		super();
+		this.cantAvanzar = pAvanzar;
 	}
 
 	//metodos adicionales

@@ -11,9 +11,8 @@ public class CasillaInicial extends Casilla{
 
 	//constructora
 
-	public CasillaInicial(int idCasilla)
-	{
-		super(idCasilla);
+	public CasillaInicial(){
+		super();
 	}
 	//metodos adicionales
 

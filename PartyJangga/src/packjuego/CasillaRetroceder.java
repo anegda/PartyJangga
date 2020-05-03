@@ -7,8 +7,8 @@ public class CasillaRetroceder extends Casilla{
 	private int cantRetroceder;
 	
 	//constructora
-	public CasillaRetroceder(int idCasilla, int pRetroceder){
-		super(idCasilla);
+	public CasillaRetroceder(int pRetroceder){
+		super();
 		cantRetroceder = pRetroceder;
 	}
 	
