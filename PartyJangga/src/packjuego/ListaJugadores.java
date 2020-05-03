@@ -28,10 +28,6 @@ public class ListaJugadores {
 		this.lista.add(pJugador);
 	}
 	
-	public void eliminarJugador(Jugador pJugador) {
-		this.lista.remove(pJugador);
-	}
-	
 	public Jugador elegirJugadorRandom() {
 		Random r = new Random();
 		int nJugador = r.nextInt(this.lista.size()) + 1;

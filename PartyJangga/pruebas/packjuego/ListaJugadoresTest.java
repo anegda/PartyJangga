@@ -56,41 +56,6 @@ public class ListaJugadoresTest {
 	}
 
 	@Test
-	public void testEliminarJugador() {
-		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
-		Jugador unJugador = null;
-		miListaJugadores.addJugador(j1);
-		miListaJugadores.addJugador(j2);
-		miListaJugadores.addJugador(j3);
-		miListaJugadores.addJugador(j4);
-		
-		unJugador = miListaJugadores.buscarJugadorPorID(1);
-		assertTrue(j1.equals(unJugador));
-		miListaJugadores.eliminarJugador(j1);
-		unJugador = miListaJugadores.buscarJugadorPorID(1);
-		assertNull(unJugador);
-		
-		unJugador = miListaJugadores.buscarJugadorPorID(2);
-		assertTrue(j2.equals(unJugador));
-		miListaJugadores.eliminarJugador(j2);
-		unJugador = miListaJugadores.buscarJugadorPorID(2);
-		assertNull(unJugador);
-		
-		unJugador = miListaJugadores.buscarJugadorPorID(3);
-		assertTrue(j3.equals(unJugador));
-		miListaJugadores.eliminarJugador(j3);
-		unJugador = miListaJugadores.buscarJugadorPorID(3);
-		assertNull(unJugador);
-		
-		unJugador = miListaJugadores.buscarJugadorPorID(4);
-		assertTrue(j4.equals(unJugador));
-		miListaJugadores.eliminarJugador(j4);
-		unJugador = miListaJugadores.buscarJugadorPorID(4);
-		assertNull(unJugador);
-		
-	}
-
-	@Test
 	public void testElegirJugadorRandom() {
 		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
 		Jugador unJugador = null;

@@ -29,10 +29,6 @@ public class Tablero {
 		this.tablero.add(pCasilla);
 	}
 	
-	public void eliminarCasilla(Casilla pCasilla) {
-		this.tablero.remove(pCasilla);
-	}
-	
  	public static Tablero getMiTablero() {
 		if(Tablero.miTablero==null) {
 			Tablero.miTablero=new Tablero();
