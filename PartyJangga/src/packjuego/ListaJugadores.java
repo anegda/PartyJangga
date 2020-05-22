@@ -30,32 +30,15 @@ public class ListaJugadores {
 	
 	public Jugador elegirJugadorRandom() {
 		Random r = new Random();
-		int nJugador = r.nextInt(this.lista.size()) + 1;
-		Jugador jugadorParaIntercambiar = this.lista.get(nJugador-1);
+		int nJugador = r.nextInt(this.lista.size());
+		Jugador jugadorParaIntercambiar = this.lista.get(nJugador);
 		return jugadorParaIntercambiar;
-	}	
-	
-	public Jugador buscarJugadorPorID(int pID) {
-		Jugador unJugador=null;
-		Iterator<Jugador> itr=this.getIterador();
-		boolean encontrado=false;
-		while (itr.hasNext() && !encontrado) {
-			unJugador=itr.next();
-			if (unJugador.tieneEsteId(pID)) {
-				encontrado=true;
-			}
-		}
-		if (!encontrado) {
-			unJugador=null;
-		}
-		return(unJugador);
-	}
+	}		
 	
 	public boolean realizarTurno() {
 		Iterator<Jugador> itr=this.getIterador();
 		Tablero miTablero = Tablero.getMiTablero();
 		ListaPreguntas miListaPreguntas = ListaPreguntas.getMiListaPreguntas();
-		Teclado miTeclado= Teclado.getMiTeclado();
 		Jugador unJugador=null;
 		boolean correcto = false;
 		boolean fin = false;
@@ -75,7 +58,7 @@ public class ListaJugadores {
 				fin=miTablero.usarCasillaPos(unJugador);
 			}
 			else {
-				System.out.println("/nEnhorabuena " + unJugador.getNombre() + " has ganado!!");
+				System.out.println("Enhorabuena " + unJugador.getNombre() + " has ganado!!");
 			}
 			System.out.println("--------------------------------------------------------------------------------------------------");
 			System.out.println();

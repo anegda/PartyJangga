@@ -1,13 +1,11 @@
 package packjuego;
 public class Jugador {
 	
-	private int id;
 	private String nombre;
 	private int posicion;
 	private boolean dadoExtra;
 	
-	public Jugador(int pID, String pNombre, int pPosicion, boolean pDadoExtra) {
-		this.id=pID;
+	public Jugador(String pNombre, int pPosicion, boolean pDadoExtra) {
 		this.nombre=pNombre;
 		this.posicion=pPosicion;
 		this.dadoExtra=pDadoExtra;
@@ -43,7 +41,8 @@ public class Jugador {
 	public boolean avanzarCasilla(int pAvanzar) {
 		boolean winner = false;
 		this.posicion=this.posicion+pAvanzar;
-		if (this.posicion >= Tablero.getMiTablero().numCasillas()) {
+		Tablero miTablero =Tablero.getMiTablero();
+		if (this.posicion >= miTablero.numCasillas()) {
 			winner = true;
 		}
 		return winner;
@@ -57,13 +56,6 @@ public class Jugador {
 		this.dadoExtra=true;
 	}
 	
-	public boolean tieneEsteId(int pId) {
-		boolean mismo=false;
-		if(this.id==pId) {
-			mismo=true;
-		}
-		return mismo;
-	}
 	public String getNombre() {
 		return this.nombre;
 	}

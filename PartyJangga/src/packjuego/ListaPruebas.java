@@ -28,17 +28,17 @@ public class ListaPruebas {
 		InputStream fich=null;
 		try {
 			fich = new FileInputStream(System.getProperty("user.dir")+File.separator+"prueba.txt");
+			Scanner sc = new Scanner(fich);
+			while(sc.hasNextLine()) {
+				String prueba = sc.nextLine();
+				Prueba nuevaPrueba = new Prueba(prueba);
+				this.listaPruebas.add(nuevaPrueba);
+			}
+			sc.close();
 		} 
 		catch (FileNotFoundException e) {
-			e.printStackTrace();
+			System.out.println("No existe el fichero");
 		}
-		Scanner sc = new Scanner(fich);
-		while(sc.hasNextLine()) {
-			String prueba = sc.nextLine();
-			Prueba nuevaPrueba = new Prueba(prueba);
-			this.listaPruebas.add(nuevaPrueba);
-		}
-		sc.close();
 	}
 	private Prueba elegirRandomPrueba( ) {
 		Random r = new Random();

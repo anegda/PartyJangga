@@ -3,7 +3,6 @@
  */
 package packjuego;
 
-
 public abstract class Casilla {
 	//constructora
 	public Casilla() {

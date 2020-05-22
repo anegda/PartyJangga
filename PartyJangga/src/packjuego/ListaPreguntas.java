@@ -25,8 +25,7 @@ public class ListaPreguntas {
 	
 	//metodos adicionales
 	
- 	public static ListaPreguntas getMiListaPreguntas() 
-	{
+ 	public static ListaPreguntas getMiListaPreguntas() {
 		if(ListaPreguntas.miListaPreguntas==null) {
 			ListaPreguntas.miListaPreguntas=new ListaPreguntas();
 		}
@@ -36,18 +35,18 @@ public class ListaPreguntas {
 		InputStream fich=null;
 		try {
 			fich = new FileInputStream(System.getProperty("user.dir")+File.separator+"preguntas.txt");
+			Scanner sc = new Scanner(fich);
+			while(sc.hasNextLine()) {
+				String pregunta = sc.nextLine();
+				String respuesta = sc.nextLine();
+				Pregunta nuevaPregunta = new Pregunta(pregunta,respuesta);
+				this.listaPreguntas.add(nuevaPregunta);
+			}
+			sc.close();
 		} 
 		catch (FileNotFoundException e) {
 			System.out.println("No existe el fichero");
 		}
-		Scanner sc = new Scanner(fich);
-		while(sc.hasNextLine()) {
-			String pregunta = sc.nextLine();
-			String respuesta = sc.nextLine();
-			Pregunta nuevaPregunta = new Pregunta(pregunta,respuesta);
-			this.listaPreguntas.add(nuevaPregunta);
-		}
-		sc.close();
 	}
 	
 	public Pregunta realizarPregunta() {

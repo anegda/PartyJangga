@@ -5,7 +5,7 @@ public class Dado {
 	private int caras; //numero de caras del dado
 	private static Dado miDado=null;
 	//Constructora 
-	//(por si se quiere realizar una partida que dure más o menos se puede cambiar el número de caras del dado)
+	//(por si se quiere realizar una partida que dure más o menos se podría cambiar el número de caras del dado)
 	private Dado(int pCaras) {
 		this.caras=pCaras;
 	}

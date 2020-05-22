@@ -20,10 +20,10 @@ public class Juego {
 	//Otros metodos
 	
 	public void jugarPartida() {
-		Juego unaPartida = Juego.getMiJuego();
-		unaPartida.setGrupoJugadores();
+		miJuego.setGrupoJugadores();
 		//set tablero
-		Tablero.getMiTablero().setTablero();
+		Tablero miTablero = Tablero.getMiTablero();
+		miTablero.setTablero();
 		//set preguntas
 		ListaPreguntas listaPreguntas = ListaPreguntas.getMiListaPreguntas();
 		listaPreguntas.leerFicheroPreguntas();
@@ -39,12 +39,6 @@ public class Juego {
 		}
 	}
 	
-	private void addJugador(int pID, String pNombre, int pPosicion, boolean pDadoExtra) {
-		ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
-		Jugador unJugador = new Jugador(pID, pNombre, pPosicion, pDadoExtra);
-		miListaJugadores.addJugador(unJugador);
-	}
-	
 	private void setGrupoJugadores() {
 		Teclado miTeclado = Teclado.getMiTeclado();
 		
@@ -56,8 +50,10 @@ public class Juego {
 		
 		while (pos < numJugadores) {
 			pos++;
-			String nombre = miTeclado.leerString(pMensajeNombre);
-			Juego.getMiJuego().addJugador(pos, nombre, 1, false);
+			String nombreJugador = miTeclado.leerString(pMensajeNombre);
+			ListaJugadores miListaJugadores = ListaJugadores.getMiListaJugadores();
+			Jugador unJugador = new Jugador(nombreJugador, 1, false);
+			miListaJugadores.addJugador(unJugador);
 		}
 	}
 	

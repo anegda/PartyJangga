@@ -3,10 +3,10 @@
  */
 package packjuego;
 public class CasillaRetroceder extends Casilla{
-	
+	//atributos
 	private int cantRetroceder;
 	
-	//constructora
+	//Constructora
 	public CasillaRetroceder(int pRetroceder){
 		super();
 		cantRetroceder = pRetroceder;

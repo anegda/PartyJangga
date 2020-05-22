@@ -40,7 +40,7 @@ public class Tablero {
  		return this.tablero.size();
  	}
  	
- 	public Casilla buscarCasillaPorPosicion(int pPosicion) {
+ 	private Casilla buscarCasillaPorPosicion(int pPosicion) {
  		Iterator<Casilla> itr = this.getIterador();
  		Casilla unaCasilla = null;
  		int pos = 0;
@@ -51,15 +51,14 @@ public class Tablero {
  		return unaCasilla;
  	}
  	public boolean usarCasillaPos(Jugador pJugador) {
- 		boolean winner = false;
- 		Tablero tableroJuego = Tablero.getMiTablero();
- 		Casilla casillaActual = tableroJuego.buscarCasillaPorPosicion(pJugador.getPosicion());
+ 		boolean fin = false;
+ 		Casilla casillaActual = miTablero.buscarCasillaPorPosicion(pJugador.getPosicion());
  		casillaActual.usar(pJugador);
  		if(pJugador.getPosicion() >= this.numCasillas()) {
- 			winner = true;
+ 			fin = true;
  			System.out.println("Enhorabuena " + pJugador.getNombre() + " has ganado!!");
  		}
- 		return winner;
+ 		return fin;
  	}	
  	
  	public void setTablero( ) {

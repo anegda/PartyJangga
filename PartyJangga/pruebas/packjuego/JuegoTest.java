@@ -12,10 +12,10 @@ public class JuegoTest {
 	
 	@Before
 	public void setUp() {
-		j1 = new Jugador(1, "Ane", 1, false);
-		j2 = new Jugador(2, "Urko", 1, false);
-		j3 = new Jugador(3, "Hugo", 1, false);
-		j4 = new Jugador(4, "Marcos", 1, false);
+		j1 = new Jugador("Ane", 1, false);
+		j2 = new Jugador("Urko", 1, false);
+		j3 = new Jugador("Hugo", 1, false);
+		j4 = new Jugador("Marcos", 1, false);
 	}
 
 	@After

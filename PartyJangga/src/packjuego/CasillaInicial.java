@@ -1,22 +1,15 @@
-/**
- * 
- */
 package packjuego;
 
-/**
- * @author Urko
- *
- */
 public class CasillaInicial extends Casilla{
-
-	//constructora
-
+	//No tiene atributos
+	
+	//Constructora
 	public CasillaInicial(){
 		super();
 	}
+	
 	//metodos adicionales
-
 	public void usar(Jugador pJugador) {
-		pJugador.setPosicion(1);
+		//La casilla inicial no hace nada, de hecho nunca va a usarse este método.
 	}
 }

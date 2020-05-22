@@ -61,9 +61,4 @@ public class JugadorTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	public void testTieneEsteId() {
-		fail("Not yet implemented");
-	}
-
 }
